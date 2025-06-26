@@ -1,2 +1,11 @@
-p = 5.988
-print(f'Preço: R${p:_^20.2f}')
+nInicial = int(input('Numero inicial: '))
+nFinal = int(input('Numero Final: '))
+
+nPares = []
+
+
+
+for c in range(nInicial, nFinal+1):
+    if c % 2 == 0:
+        nPares.append(c)
+print(nPares) 
