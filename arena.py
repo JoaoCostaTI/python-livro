@@ -1,11 +1,9 @@
-nInicial = int(input('Numero inicial: '))
-nFinal = int(input('Numero Final: '))
+print('-' * 50)
+print(f'{"Sistema de cadastro de alunos".center(50)}')
+print('-' * 50)
+print('1 - Cadastrar Aluno\n2 - Listar Alunos\n3 - Atualizar Cadastro\n4 - Deletar registro')
+print('-' * 50)
 
-nPares = []
-
-
-
-for c in range(nInicial, nFinal+1):
-    if c % 2 == 0:
-        nPares.append(c)
-print(nPares) 
+print('-' * 50)
+print(f'{"ID":<7}{"Nome":<15}')
+print('-' * 50)
