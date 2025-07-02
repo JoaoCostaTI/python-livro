@@ -1,9 +1,7 @@
-l = [8,9,15]
-v = int(input('NUMERO para encontra: '))
+l = [5,9,13]
 
-for c in l:
-    if c == v:
-        print(f'{c} encontrado!')
-        break
-else:
-    print('Valor não encontrado na lista')
+for x, e in enumerate(l):
+    print(f'[{x}] {e}')
+
+for z in enumerate(l):
+    print(z)
