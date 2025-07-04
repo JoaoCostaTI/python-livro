@@ -1,7 +1,15 @@
-l = [5,9,13]
+lista = [7,6,4,3,2]
 
-for x, e in enumerate(l):
-    print(f'[{x}] {e}')
+x = len(lista)
 
-for z in enumerate(l):
-    print(z)
+for algo in range(len(lista)):
+    i = 0
+    for c in range(x):
+        if i == x-1:
+            break
+        elif lista[i] > lista[i+1]:
+            temp = lista[i]
+            lista[i] = lista[i+1]
+            lista[i+1] = temp
+        i += 1
+print(lista)
