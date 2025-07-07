@@ -13,3 +13,6 @@ for algo in range(len(lista)):
             lista[i+1] = temp
         i += 1
 print(lista)
+
+
+
