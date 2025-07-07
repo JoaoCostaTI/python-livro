@@ -15,11 +15,4 @@ for algo in range(len(lista)):
 print(lista)
 
 
-- Laboratório 4 temos: 
-    - 21 licenças com (Revit, Civil 3d, Navisworks)
-- Laboratório 5
-    - 21 Licenças com (AutoCad)
-- Laboratório BIM
-    - 2 Licença com (Auto Cad) 
-- Computador competidora Worldskills
-    - 1 Licença (AutoCad, Revit, NavisWorks)
+
