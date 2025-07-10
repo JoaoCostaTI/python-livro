@@ -1,1 +1,3 @@
+lista = []
 
+print(len(lista))
