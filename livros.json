@@ -1,23 +1,30 @@
 [
-    {"nome": "Harry Potter", "autor": "Rowling", "situacao": "Lido"},
-    {"nome": "O Senhor dos Anéis", "autor": "J.R.R. Tolkien", "situacao": "Lido"},
-    {"nome": "1984", "autor": "George Orwell", "situacao": "Quero Ler"},
-    {"nome": "O Pequeno Príncipe", "autor": "Antoine de Saint-Exupéry", "situacao": "Lido"},
-    {"nome": "A Culpa é das Estrelas", "autor": "John Green", "situacao": "Lendo"},
-    {"nome": "Dom Casmurro", "autor": "Machado de Assis", "situacao": "Lido"},
-    {"nome": "O Alquimista", "autor": "Paulo Coelho", "situacao": "Quero Ler"},
-    {"nome": "Memórias Póstumas de Brás Cubas", "autor": "Machado de Assis", "situacao": "Lido"},
-    {"nome": "A Revolução dos Bichos", "autor": "George Orwell", "situacao": "Lido"},
-    {"nome": "O Código Da Vinci", "autor": "Dan Brown", "situacao": "Quero Ler"},
-    {"nome": "O Hobbit", "autor": "J.R.R. Tolkien", "situacao": "Lendo"},
-    {"nome": "Cem Anos de Solidão", "autor": "Gabriel García Márquez", "situacao": "Lido"},
-    {"nome": "O Morro dos Ventos Uivantes", "autor": "Emily Brontë", "situacao": "Quero Ler"},
-    {"nome": "Orgulho e Preconceito", "autor": "Jane Austen", "situacao": "Lido"},
-    {"nome": "A Menina que Roubava Livros", "autor": "Markus Zusak", "situacao": "Lendo"},
-    {"nome": "O Guia do Mochileiro das Galáxias", "autor": "Douglas Adams", "situacao": "Lido"},
-    {"nome": "Crime e Castigo", "autor": "Fiódor Dostoiévski", "situacao": "Quero Ler"},
-    {"nome": "O Diário de Anne Frank", "autor": "Anne Frank", "situacao": "Lido"},
-    {"nome": "O Apanhador no Campo de Centeio", "autor": "J.D. Salinger", "situacao": "Lido"},
-    {"nome": "A Metamorfose", "autor": "Franz Kafka", "situacao": "Quero Ler"},
-    {"nome": "A Cabana", "autor": "William P. Young", "situacao": "Lendo"}
+    {
+        "nome": "Harry Potter",
+        "autor": "Rowling",
+        "situacao": "Lido",
+        "ano": 1997,
+        "paginas": 223
+    },
+    {
+        "nome": "O Senhor dos Anéis",
+        "autor": "J.R.R. Tolkien",
+        "situacao": "Lido",
+        "ano": 1954,
+        "paginas": 1178
+    },
+    {
+        "nome": "O Pequeno Príncipe",
+        "autor": "Antoine de Saint-Exupéry",
+        "situacao": "Lido",
+        "ano": 1943,
+        "paginas": 96
+    },
+    {
+        "nome": "A Culpa é das Estrelas",
+        "autor": "John Green",
+        "situacao": "Lendo",
+        "ano": 2012,
+        "paginas": 313
+    }
 ]
