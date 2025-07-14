@@ -22,6 +22,8 @@ def limitarTextos(texto, limite):
         return texto[:limite - 3] + '...'
     return texto
 
+###############################################################################
+#Situação dos Livros
 def listarLivros():
         #Titulo das colunas
         print(f'{"Nº":<5}{"Nome":<30}{"Autor(a)":<20}{"Situação":<15}{"Ano":<5}{"Nº Páginas":<5}')
@@ -42,7 +44,7 @@ def listarLivrosLendo():
         print('-' * 80)
             #Listar livros com formatação limitada
         for k, livro in enumerate(livros, start=1):
-            if livro['situacao'] == 'lendo':
+            if livro['situacao'] == 'Lendo':
                 nome = limitarTextos(livro['nome'], 30)
                 autor = limitarTextos(livro['autor'], 20)
                 situacao = limitarTextos(livro['situacao'], 15)
@@ -51,6 +53,36 @@ def listarLivrosLendo():
 
                 print(f'{k:<5}{nome:<30}{autor:<20}{situacao:<15}{anoLeitura:<5}{nPaginas:<5}')
         print('~' * 80)
+def listarLivrosQueroLer():
+    #Titulo das colunas
+        print(f'{"Nº":<5}{"Nome":<30}{"Autor(a)":<20}{"Situação":<15}{"Ano":<5}{"Nº Páginas":<5}')
+        print('-' * 80)
+            #Listar livros com formatação limitada
+        for k, livro in enumerate(livros, start=1):
+            if livro['situacao'] == 'Quero Ler':
+                nome = limitarTextos(livro['nome'], 30)
+                autor = limitarTextos(livro['autor'], 20)
+                situacao = limitarTextos(livro['situacao'], 15)
+                anoLeitura = livro['ano']
+                nPaginas = livro["paginas"]
+
+                print(f'{k:<5}{nome:<30}{autor:<20}{situacao:<15}{anoLeitura:<5}{nPaginas:<5}')
+        print('~' * 80)
+def listarLivrosLido():
+    #Titulo das colunas
+        print(f'{"Nº":<5}{"Nome":<30}{"Autor(a)":<20}{"Situação":<15}{"Ano":<5}{"Nº Páginas":<5}')
+        print('-' * 80)
+            #Listar livros com formatação limitada
+        for k, livro in enumerate(livros, start=1):
+            if livro['situacao'] == 'Lido':
+                nome = limitarTextos(livro['nome'], 30)
+                autor = limitarTextos(livro['autor'], 20)
+                situacao = limitarTextos(livro['situacao'], 15)
+                anoLeitura = livro['ano']
+                nPaginas = livro["paginas"]
+
+                print(f'{k:<5}{nome:<30}{autor:<20}{situacao:<15}{anoLeitura:<5}{nPaginas:<5}')
+        print('~' * 80)    
 
 ###############################################################################
 
@@ -81,9 +113,9 @@ while True:
         if len(livros) == 0:
             formatacao('Nenhum livro cadastrado! Cadastre ao menos 1 livro! ')   
         else:
-            print('1 - Todos os Livros\n2 - Lendo\n3 - Quero Ler\n4 - Lido\n5 - Menu anterior')
-            op = int(input('Sua opção: '))
             while True:
+                print('1 - Todos os Livros\n2 - Lendo\n3 - Quero Ler\n4 - Lido\n5 - Menu anterior')
+                op = int(input('Sua opção: '))
                 if op == 5:
                     print('Voltando ao menu anterior...')
                     break
@@ -91,6 +123,10 @@ while True:
                     listarLivros()
                 elif op == 2:
                     listarLivrosLendo()
+                elif op == 3:
+                    listarLivrosQueroLer()
+                elif op == 4:
+                    listarLivrosLido()
                 else:
                     print('Opção inválida! Selecione apenas dentre as disponiveis! ')
                 
