@@ -35,9 +35,8 @@ def listarLivros():
             situacao = limitarTextos(livro['situacao'], 15)
             anoLeitura = livro['ano']
             nPaginas = livro["paginas"]
-
             print(f'{k:<5}{nome:<30}{autor:<20}{situacao:<15}{anoLeitura:<5}{nPaginas:<5}')
-        print('~' * 80)
+        print('-' * 80)
 def listarLivrosLendo():
     #Titulo das colunas
         print(f'{"Nº":<5}{"Nome":<30}{"Autor(a)":<20}{"Situação":<15}{"Ano":<5}{"Nº Páginas":<5}')
@@ -82,15 +81,40 @@ def listarLivrosLido():
                 nPaginas = livro["paginas"]
 
                 print(f'{k:<5}{nome:<30}{autor:<20}{situacao:<15}{anoLeitura:<5}{nPaginas:<5}')
-        print('~' * 80)    
-
-###############################################################################
-
-#Menu
+        print('~' * 80)   
+def livrosPorAno(anoReferencia):
+   
+    #Listar livros com formatação limitada
+    qtdLivros = 0
+    for k, livro in enumerate(livros, start=1):
+        if livro['ano'] == anoReferencia and livro['situacao'] == 'Lido':
+            qtdLivros += 1
+    return qtdLivros
+def preencherJson():
+     with open('livros.json', 'w', encoding='utf-8') as arquivo:
+        json.dump(livros, arquivo, ensure_ascii=False, indent=4)
+def paginometro():
+    qtdPaginas = 0
+    for livro in livros:
+        if livro['situacao'] == 'Lendo' or livro['situacao'] == 'Lido':
+            qtdPaginas += livro['paginas']
+    return qtdPaginas
+def mediaPaginas():
+    qtdPaginas = 0
+    qtdLivros = 0
+    for livro in livros:
+        if livro['situacao'] == 'Lendo' or livro['situacao'] == 'Lido':
+            qtdLivros += 1
+            qtdPaginas += livro['paginas']
+    return int(qtdPaginas / qtdLivros)
 def menu():
-    print('-' * 25)
-    print('1 - Cadastrar Livro\n2 - Listar Livro\n3 - Excluir Livro: ')
-    print('-' * 25)
+    tam = 40
+    print('-' * tam)
+    print(f'{"Sistema de Controle de Leitura".center(tam)}')
+    print('-' * tam)
+    print('1 - Cadastrar Livro\n2 - Listar Livro\n3 - Excluir Livro\n4 - Estatisticas\n5 - Editar Livro\n6 - Sair do Programa')
+    print('-' * tam)
+##############################################################################
 
 while True:
     menu()
@@ -102,34 +126,49 @@ while True:
 
         dados['nome'] = input('Nome do livro: ')
         dados['autor'] = input('Nome Autor(a): ')
-        dados['situacao'] = input('---Situação---\n[Quero Ler]\n[Lendo]\n[Lido]')
+        while True:
+            print('---Situação---\n1 - [Quero Ler]\n2 - [Lendo]\n3 - [Lido]')
+            situacao = int(input('Sua opção: '))
+            if situacao <= 0 or situacao > 3:
+                print('Erro! Selecione apenas as situações acima! ')
+            elif situacao == 1:
+                dados['situacao'] = "Quero Ler"
+                break
+            elif situacao == 2:
+                dados['situacao'] = "Lendo"
+                break
+            elif situacao == 3:
+                dados['situacao'] = "Lido"
+                break
+
         dados['ano'] =  int(input('Ano de leitura: '))
         dados['paginas'] = int(input('Páginas: '))
         livros.append(dados)
-        with open('livros.json', 'w', encoding='utf-8') as arquivo:
-            json.dump(livros, arquivo, ensure_ascii=False, indent=4)
+        preencherJson()
 
     elif op == 2:
         if len(livros) == 0:
             formatacao('Nenhum livro cadastrado! Cadastre ao menos 1 livro! ')   
         else:
             while True:
+                tam = 40
+                print('-' * tam)
                 print('1 - Todos os Livros\n2 - Lendo\n3 - Quero Ler\n4 - Lido\n5 - Menu anterior')
-                op = int(input('Sua opção: '))
-                if op == 5:
+                subOpcao = int(input('Sua opção: '))
+                if subOpcao == 5:
                     print('Voltando ao menu anterior...')
                     break
-                elif op == 1:
+                elif subOpcao == 1:
                     listarLivros()
-                elif op == 2:
+                elif subOpcao == 2:
                     listarLivrosLendo()
-                elif op == 3:
+                elif subOpcao == 3:
                     listarLivrosQueroLer()
-                elif op == 4:
+                elif subOpcao == 4:
                     listarLivrosLido()
                 else:
                     print('Opção inválida! Selecione apenas dentre as disponiveis! ')
-                
+                print('-' * tam)
     elif op == 3:
             #EXCLUSÃO DE LIVROS
             listarLivros()
@@ -143,9 +182,25 @@ while True:
                     print(f'Livro [{livros[op-1]['nome']}] excluído com sucesso!')
                     del livros[op - 1] 
                     print(f'*' * 65)
-                    with open('livros.json', 'w', encoding='utf-8') as arquivo:
-                        json.dump(livros, arquivo, ensure_ascii=False, indent=4)
+                    preencherJson()
                     break
+    elif op == 4:
+        #Estatisticas
+        tam = 40
+        print('~' * tam)
+        print(f'{"Estatisticas de Leitura".center(tam)}')
+        print('~' * tam)
+        print(f'2023 = {livrosPorAno(2023)}x')
+        print(f'2024 = {livrosPorAno(2024)}x')
+        print(f'2025 = {livrosPorAno(2025)}x')
+        print(f'Paginômetro = {paginometro()}')
+        print(f'Média de Páginas = {mediaPaginas()}')
+        print('~' * tam)
+    elif op == 5:
+        print('Ainda em produção...')
+    elif op == 6:
+        print('Saindo do Programa...')
+        break
     else:
         formatacao('Opção inválida! Selecione uma opção do menu! ')
         
