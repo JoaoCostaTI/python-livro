@@ -1,11 +1,9 @@
-def fib(n):
-    valor = 0
-    if n == 0 or n == 1:
-        return n
-    else:
-        fibo = fib(n - 1) + fib(n - 2)
-        valor += fibo
-    
-    return valor
-
-print(fib(8))
+def faixaInt(pergunta, min, max):
+    while True:
+        v = int(input(pergunta))
+        if v < min or v > max:
+            print(f'Inválido! Digite um valor entre {min} e {max}')
+        else:
+            return v
+            
+faixaInt('Digite um numero entre 0 e 10', 0, 10)
