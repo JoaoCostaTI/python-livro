@@ -3,6 +3,6 @@ def soma(*n):
 
     for num in n:
         s += num
-    return s
+    return print(s)
 
 soma(2,4,6,20)
