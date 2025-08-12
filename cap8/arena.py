@@ -1,3 +1,4 @@
-import random
+l = ["2",4,{"a":9,"b":98},["!"]]
 
-print(random.sample(range(1,101),6))
+for e in l:
+    print(type(e))
