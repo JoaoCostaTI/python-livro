@@ -1,4 +1,10 @@
-l = ["2",4,{"a":9,"b":98},["!"]]
+s = "abcdef"
+z = []
 
-for e in l:
-    print(type(e))
+for l in s:
+    m = l.upper()
+    z.append(m)
+print(z)
+
+z = [s.upper() for s in "abdcef"]
+print(z)

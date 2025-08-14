@@ -8,6 +8,9 @@ Repositório do livro Introdução a programação com Python
 # 5.9
 # 5.13
 
+# Temas a revisar
+# List comprehensions
+
 Desafios
 """
 Nível Fácil:
