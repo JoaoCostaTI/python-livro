@@ -1,14 +1,5 @@
-def escritaEmTXT():
-    lista = open("algumacoisa.txt", 'w')
+import sys
 
-    for l in range(1,10):
-        lista.write(f"{l}º linha escrita...\n")
-    lista.close()
-
-def leituraEmTXT():
-    lista = open("algumacoisa.txt", 'r')
-
-    for l in lista.readlines():
-        print(f"{l}")
-    lista.close()
-
+print(f"Numeo de parametros: {len(sys.argv)}")
+for n, p in enumerate(sys.argv):
+    print(f"Parametro {n} = {p}")
