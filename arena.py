@@ -1,8 +1,9 @@
-def soma(*n):
-    s = 0
+while True:
+    tab = int(input('Tabuada de qual numero: [0 Sai] >>> '))
 
-    for num in n:
-        s += num
-    return s
-
-soma(2,4,6,20)
+    if tab == 0:
+        print("saindo...")
+        break
+    else:
+        for n in range(1, 11):
+            print(f'{tab} x {n} = {tab * n}')
