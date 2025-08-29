@@ -1,2 +1,9 @@
-No meio do caminho tinha uma pedra
-tinha uma pedra no meio do caminho
+Ola
+Mundo
+primeiro
+teste
+com 
+manipulacao
+de
+textos
+externos
