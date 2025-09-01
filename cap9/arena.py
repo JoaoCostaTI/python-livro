@@ -1,9 +1,5 @@
 import sys
+print(f"Numero de parametros: {len(sys.argv)}")
 
-arquivo = sys.argv[1]
-
-texto = open(arquivo, 'r')
-
-for l in texto.readlines():
-    print(l[:-1])
-texto.close()
+for n, p in enumerate(sys.argv):
+    print(f"Parametro {n} = {p}")
