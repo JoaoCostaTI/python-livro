@@ -1,7 +1,8 @@
-arquivo = open('numeros.txt', 'r')
+import sys
 
-for l in arquivo.readlines():
-    print(l)
-print(arquivo)
-arquivo.close()
+arquivo = sys.argv[1]
+
+with open(arquivo, 'r') as exibicao:
+    for l in exibicao:
+        print(l)
 
