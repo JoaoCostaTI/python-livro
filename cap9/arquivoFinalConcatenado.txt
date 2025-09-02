@@ -1,0 +1,18 @@
+Titulo: .\texto1.txt
+Texto 1 aqui
+Texto 1 aqui
+Texto 1 aqui
+Texto 1 aqui
+Texto 1 aqui
+Titulo: .\texto2.txt
+Texto 2 aqui
+Texto 2 aqui
+Texto 2 aqui
+Texto 2 aqui
+Texto 2 aqui
+Titulo: .\texto3.txt
+Texto 3 aqui
+Texto 3 aqui
+Texto 3 aqui
+Texto 3 aqui
+Texto 3 aqui

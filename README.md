@@ -11,6 +11,9 @@ Repositório do livro Introdução a programação com Python
 # Temas a revisar
 # List comprehensions
 # Geradores em Python (usando ITER, NEXT, YELD) e elementos com Comprehensions
+# Manipulação de arquivos usando import sys
+
+
 
 Desafios
 """
