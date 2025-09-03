@@ -7,6 +7,8 @@ Repositório do livro Introdução a programação com Python
 # Ex's a revisar
 # 5.9
 # 5.13
+# Processamento de arquivos
+# 9.12
 
 # Temas a revisar
 # List comprehensions
