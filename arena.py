@@ -1,9 +1,10 @@
-while True:
-    tab = int(input('Tabuada de qual numero: [0 Sai] >>> '))
+listaDeCompras = ["maçã", "pão", "leite", "maçã", "arroz", "pão"]
+dicionarioListaCompras = {}
 
-    if tab == 0:
-        print("saindo...")
-        break
+for p, itens in enumerate(listaDeCompras, start=1):
+    if itens not in dicionarioListaCompras:
+        dicionarioListaCompras[itens] = [p]
     else:
-        for n in range(1, 11):
-            print(f'{tab} x {n} = {tab * n}')
+        dicionarioListaCompras[itens] += [p]
+    
+print(dicionarioListaCompras)
