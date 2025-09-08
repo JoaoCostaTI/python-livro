@@ -1,22 +1,21 @@
 import sys
 
 arquivo = sys.argv[1]
-
-fraseCompleta = ""
-fraseDicionario = {}
+fraseSplit = ""
+fraseFinal = ""
+dicionarioFrase = {}
 
 with open(arquivo, 'r', encoding="utf-8") as frase:
-    for l in frase.readlines():
-        fraseCompleta += l
-
-fraseSplit = fraseCompleta.split()
-
-for l in fraseSplit:
-    if l not in fraseDicionario:
-        fraseDicionario[l] = 1
+    for item in frase.readlines():
+        fraseSplit += item
+    fraseFinal =  fraseSplit.split()
+    
+for k, v in enumerate(fraseFinal):
+    if v not in dicionarioFrase:
+        dicionarioFrase[v] = 1
     else:
-        fraseDicionario[l] += 1
-
-print(fraseDicionario)
+        dicionarioFrase[v] += 1
 
 
+for k, v in dicionarioFrase.items():
+    print(f"{k} = {v}")

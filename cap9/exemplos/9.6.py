@@ -49,7 +49,7 @@ def lista():
     print("------\n")
 
 def le():
-    AGENDA
+    
     nomeArquivo = pedeNomeArquivo()
     with open(nomeArquivo, 'r', encoding="utf-8") as arquivo:
         agenda = []
