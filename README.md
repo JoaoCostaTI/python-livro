@@ -9,11 +9,13 @@ Repositório do livro Introdução a programação com Python
 # 5.13
 # Processamento de arquivos
 # 9.12
+# 9.35 e 36
 
 # Temas a revisar
 # List comprehensions
 # Geradores em Python (usando ITER, NEXT, YELD) e elementos com Comprehensions
 # Manipulação de arquivos usando import sys
+# Capitulo 9 inteiro
 
 
 
