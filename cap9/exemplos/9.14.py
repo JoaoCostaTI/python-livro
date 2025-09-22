@@ -2,6 +2,7 @@ from zoneinfo import ZoneInfo
 from datetime import datetime
 
 
+
 bruxelas = ZoneInfo('Europe/Brussels')
 novaIorque = ZoneInfo('America/New-York')
 tokio = ZoneInfo('Japan')
@@ -13,3 +14,4 @@ print('Agora em:')
 print('Bruxelas ', agora.astimezone(bruxelas))
 print('Nova Iorque ', agora.astimezone(novaIorque))
 print('Tokio ', agora.astimezone(tokio))
+
