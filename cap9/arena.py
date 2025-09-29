@@ -1,3 +1,4 @@
-algo = ord("A")
-print(algo)
-print(type(algo))
+algo = "Aqui vai um texto"
+
+print(len(algo))
+assert len(algo) == 17
