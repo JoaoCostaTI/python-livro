@@ -1,26 +1,32 @@
-tv = {
-    "ligado" : False,
-    "canal" : 2
-}
+"""
+class televisao:
+    def __init__(self):
+        self.ligada = False
+        self.canal = 2
 
-tvSala = {
-    "ligado" : False,
-    "canal" : 2
-}
+tvQuarto = televisao()
 
-tvQuarto = {
-    "ligado" : True,
-    "canal" : 4
-}
+print(tvQuarto.ligada)
 
-def ligaTv(tv):
-    tv['ligado'] = True
+print(tvQuarto.canal)
 
-def desligaTv(tv):
-    tv['ligado'] = False
+tvSala = televisao()
+tvSala.ligada = True
+tvSala.canal = 86
+print(tvSala.ligada)
+print(tvSala.canal)
+"""
+class Televisao:
+    def __init__(self):
+        self.ligada = False
+        self.canal = 2
+    def mudaCanalParaBaixo(self):
+        self.canal -= 1
+    def mudaCanalParaCima(self):
+        self.canal += 1
+    
+tvJoao = Televisao()
 
-ligaTv(tvSala)
-desligaTv(tvQuarto)
-
-print(tvSala)
-print(tvQuarto)
+print(f'Canal Atual TV João: {tvJoao.canal}')
+tvJoao.mudaCanalParaCima()
+print(f"Alterando o canal passou para: {tvJoao.canal}")
