@@ -1,7 +1,7 @@
 class Televisão():
-    def __init__(self, canalMin, canalMax):
+    def __init__(self,canalInicial, canalMin, canalMax):
         self.ligada = False
-        self.canal = 2
+        self.canal = canalInicial
         self.canalMin = canalMin
         self.canalMax = canalMax
     def mudaCanalParaBaixo(self):
@@ -11,7 +11,7 @@ class Televisão():
         if self.canal + 1 <= self.canalMax:
             self.canal += 1
 
-tv = Televisão(1, 99)
+tv = Televisão(5, 1, 99)
 
 for x in range(1, 99):
     tv.mudaCanalParaCima()
