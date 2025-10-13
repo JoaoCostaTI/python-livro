@@ -1,18 +1,16 @@
-from contas import Conta
 from clientes import Cliente
-from banco import Banco
+from contas import Conta, ContaEspecial
 
-joao = Cliente('João Marcos Mendes Costa', '31992206233')
-cleide = Cliente('Cleideane Silva Costa', '3194139158')
-jose = Cliente('José Silva', 892734590)
+joao = Cliente('João Mendes', 92206233)
+cleide = Cliente('Cleideane', 94139158)
 
-contaJC = Conta([joao, cleide], 100)
-contaJ = Conta([jose], 10)
-tatu = Banco('Tatu')
-tatu.abreConta(contaJC)
-tatu.abreConta(contaJ)
-contaJC.deposito(1000)
-contaJ.deposito(500)
-contaJC.saque(40.54)
-tatu.listaContas()
+conta1 = Conta([joao], 3333, 1000)
+conta2 = ContaEspecial([joao, cleide], 6666, 500, 1000)
 
+conta1.saque(50)
+conta2.deposito(300)
+conta1.saque(190)
+conta2.deposito(95.15)
+conta2.saque(1500)
+conta1.extrato()
+conta2.extrato()
