@@ -38,4 +38,9 @@ class ContaEspecial(Conta):
         if self.saldo + self.limite >= valor:
             self.saldo -= valor
             self.operacoes.append(['SAQUE', valor])
+    def extrato(self):
+        print(f'Extrato CC nº: {self.numero}\n')
+        for op in self.operacoes:
+            print(f'{op[0]} {op[1]:.2f}')
+        print(f"\nSaldo: R${self.saldo:.2f}\nLimite: R${self.limite:.2f}\nSaldo P/Saque: R${self.saldo:.2f}")
 
