@@ -7,15 +7,15 @@ class Telefone:
         tipo = self.tipo or ""
         return f"{self.numero} {tipo}"
 
-    def __eq__(self, outro_valor):
-        return self.numero == outro_valor.numero and (
-            (self.tipo == outro_valor.tipo) or (self.tipo is None or outro_valor.tipo is None))
-
+    def __eq__(self, value):
+        return self.numero == value.numero and ((self.tipo == value.tipo) or (self.tipo is None or value.tipo is None))
+    
     @property
     def numero(self):
-        return self.__numero
+        return self._numero
     @numero.setter
-    def numero(self, valor):
-        if valor is None or not valor.strip():
-            raise ValueError('Numero não pode ser None ou em Branco.')
-        self.__numero = valor
+    def numero(self, value):
+        if value is None or not value.strip():
+            raise ValueError('Numero não pode ser NONE ou em Branco.')
+        self._numero = value
+        

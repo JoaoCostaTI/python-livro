@@ -1,4 +1,4 @@
-from lista_unica import ListaUnica
+from cap10.exemplos.agenda.lista_unica import ListaUnica
 
 lu = ListaUnica(int)
 lu.append(5)
