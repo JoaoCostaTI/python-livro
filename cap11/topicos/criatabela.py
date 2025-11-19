@@ -9,6 +9,8 @@ dados = [
 conexao = sqlite3.connect('agenda.db')
 cursor = conexao.cursor()
 
+cursor.execute('CREATE TABLE if not EXISTS agenda (nome, telefone)')
+
 cursor.executemany("""
     INSERT INTO agenda(nome, telefone)
     VALUES(?,?)
@@ -18,3 +20,11 @@ conexao.commit()
 cursor.close()
 conexao.close()
 
+
+conexao = sqlite3.connect('agenda.db')
+cursor = conexao.cursor()
+
+cursor.execute('SELECT * FROM agenda')
+resultado = cursor.fetchall()
+
+print(resultado)
