@@ -1,10 +1,14 @@
 import sqlite3
+from contextlib import closing
 
-conexao = sqlite3.connect('precos.db')
-cursor = conexao.cursor()
-
-cursor.execute('SELECT * FROM precos')
-precos = cursor.fetchall()
-
-for p in precos:
-    print(f'Produto: {p[0]}\nValor: R${p[1]:.2f}')
+with sqlite3.connect('precos.db') as conexao:
+    with closing(conexao.cursor()) as cursor:
+        cursor.execute('SELECT * FROM precos')
+        while True:
+            resultado = cursor.fetchone()
+            if resultado is None:
+                break
+            print('-' *5)
+            print(f'Produto: {resultado[0]}\nPreço: R${resultado[1]}')
+        print('-' * 5)
+ 
