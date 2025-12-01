@@ -14,3 +14,4 @@ with sqlite3.connect('agenda.db') as conexao:
                 break
             print(f'Nome: {res[0]}\nTelefone: {res[1]}')
             x += 1
+        print(x)

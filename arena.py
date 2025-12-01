@@ -1,14 +1,7 @@
-import sqlite3
+import webbrowser
 
-conexao = sqlite3.connect('hahaha.db')
-cursor = conexao.cursor()
+url = "https://www.youtube.com/watch?v=LoT9H_OgyrI"
 
-cursor.execute('SELECT * FROM hahaha')
+download = url[:12] + 'ss' + url[12:]
 
-dados = cursor.fetchall()
-print(dados)
-
-cursor.close()
-conexao.close()
-
-
+webbrowser.open(download)

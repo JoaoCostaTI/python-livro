@@ -10,5 +10,5 @@ with sqlite3.connect('agenda.db') as conexao:
         while True:
             res=cursor.fetchone()
             if res is None:
-                break'
+                break
             print(f"Nome: {res[0]}\nTelefone: {res[1]}")

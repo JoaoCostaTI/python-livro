@@ -9,6 +9,6 @@ with sqlite3.connect('precos.db') as conexao:
             if resultado is None:
                 break
             print('-' *5)
-            print(f'Produto: {resultado[0]}\nPreço: R${resultado[1]}')
+            print(f'Produto: {resultado[0]}\nPreço: R${resultado[1]:.2f}')
         print('-' * 5)
  
